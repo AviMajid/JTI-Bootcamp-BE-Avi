@@ -2,10 +2,12 @@ FROM node:18
 
 WORKDIR /usr/src/app
 
+ENV NODE_ENV production
+
 # Copy the package.json...
 COPY package*.json ./
 
-RUN npm install express nodejs mongojs body-parser cors
+RUN npm install
 
 COPY . .
 
