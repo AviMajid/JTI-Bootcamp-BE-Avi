@@ -2,7 +2,6 @@ FROM node:18
 
 WORKDIR /usr/src/app
 
-ENV NODE_ENV production
 
 # Copy the package.json...
 COPY package*.json ./
