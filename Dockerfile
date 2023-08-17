@@ -1,13 +1,14 @@
 FROM node:18
 
+WORKDIR /usr/src/app
+
+# Just copy the package.json...
+COPY package*.json ./
+
 # so we can cache this layer:
 RUN npm install
 
-# Just copy the package.json...
-COPY . /app
-
-WORKDIR /app
-
+COPY . .
 
 EXPOSE 3000
 
