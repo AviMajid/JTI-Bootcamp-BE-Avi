@@ -1,13 +1,13 @@
-FROM node:18
-
-RUN npm start
-# Just copy the package.json...
-COPY . /app
+FROM node:14
 
 WORKDIR /app
 
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
 
 EXPOSE 3000
 
-# command to run on container start
-CMD [ "node", "index.js" ]
+CMD [ "node", "index.js" ]
