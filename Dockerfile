@@ -1,6 +1,6 @@
 FROM node:18
 
-RUN npm run
+RUN npm start
 # Just copy the package.json...
 COPY . /app
 
