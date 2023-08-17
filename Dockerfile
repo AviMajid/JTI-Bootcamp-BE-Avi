@@ -1,7 +1,5 @@
 FROM node:18
 
-# so we can cache this layer:
-RUN npm install
 
 # Just copy the package.json...
 COPY . /app
