@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 # Copy the package.json...
 COPY package*.json ./
 
-RUN npm install
+RUN npm install express nodejs mongojs body-parser cors
 
 COPY . .
 
