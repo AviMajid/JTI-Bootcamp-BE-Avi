@@ -1,13 +1,15 @@
 FROM node:18
 
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
+# so we can cache this layer:
 RUN npm install
 
-COPY . .
+# Just copy the package.json...
+COPY . /app
+
+WORKDIR /app
+
 
 EXPOSE 3000
 
-CMD [ "node", "index.js" ]
+# command to run on container start
+CMD [ "node", "index.js" ]
